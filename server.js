@@ -46,21 +46,21 @@ app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname, "index.html"));
 });
 
-app.get("/api/tables", function (req, res) {
+app.get("/tables", function (req, res) {
     res.sendFile(path.join(__dirname, "tables.html"));
 });
 
-app.get("/api/reserve", function (req, res) {
+app.get("/reserve", function (req, res) {
     res.sendFile(path.join(__dirname, "reserve.html"));
 });
 
 // Displays all reservations
-app.get("/api/allreservations", function (req, res) {
+app.get("/api/tables", function (req, res) {
     return res.json(reservations);
 });
 
 // Create new reservations - takes in JSON input
-app.post("/api/reserve", function(req, res) {
+app.post("/api/tables", function(req, res) {
     // req.body hosts is equal to the JSON post sent from the user
     // This works because of our body-parser middleware
     var newReservation= req.body;
